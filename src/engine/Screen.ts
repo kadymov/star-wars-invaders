@@ -6,8 +6,8 @@ export class Screen extends Layer {
   private readonly canvas: HTMLCanvasElement;
   private lastDraw: number;
   private lastFpcUpd: number;
-  private fpc: number = 0;
-  private readonly ctx: CanvasRenderingContext2D;
+  private fpc = 0;
+  private readonly ctx: CanvasRenderingContext2D | null;
 
   constructor(width: number, height: number, showFPC = false) {
     super();
@@ -16,7 +16,7 @@ export class Screen extends Layer {
     this.canvas.width = width;
     this.canvas.height = height;
 
-    this.ctx = this.canvas.getContext('2d')!;
+    this.ctx = this.canvas.getContext('2d');
 
     this.showFPC = showFPC;
     this.lastDraw = new Date().getTime();

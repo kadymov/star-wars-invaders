@@ -58,5 +58,5 @@ export abstract class Drawable {
       r1.top < r2.bottom &&
       r1.bottom > r2.top
     );
-  };
+  }
 }

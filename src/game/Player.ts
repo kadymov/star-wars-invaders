@@ -14,7 +14,7 @@ export class Player extends Movie{
     super(images, 60);
   }
 
-  draw(x = 0, y = 0) {
+  draw() {
     this.update();
     super.draw();
   }
@@ -61,5 +61,5 @@ export class Player extends Movie{
   fire() {
     this.play(true);
     return this;
-  };
+  }
 }

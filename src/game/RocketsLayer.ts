@@ -50,7 +50,7 @@ export class RocketsLayer extends Layer {
     }
   }
 
-  draw(x: number = 0, y: number = 0) {
+  draw() {
     if (!this.visibility) return this;
 
     for (const rocket of this.children) {

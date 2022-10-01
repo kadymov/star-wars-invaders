@@ -25,9 +25,7 @@ export class Loader {
   ): Promise<ImgResOutput> {
     const result: ImgResOutput = {};
 
-    for (const name in imgUrlObj) {
-      if (!imgUrlObj.hasOwnProperty(name)) continue;
-
+    for (const name of Object.keys(imgUrlObj)) {
       const urls = imgUrlObj[name];
       const urlsArr: string[] = Array.isArray(urls)
         ? urls

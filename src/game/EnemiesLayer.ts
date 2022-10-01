@@ -6,7 +6,7 @@ export class EnemiesLayer extends Layer {
   private moveDirection: 'left' | 'right' = 'right';
   private hSpeed = 100;
   private vSpeed = 15;
-  private readonly eventsCallback: (e: { event: string }) => void = () => {};
+  private readonly eventsCallback: (e: { event: string }) => void;
 
   constructor(enemySprite: HTMLImageElement[], cb: EnemiesLayer['eventsCallback']) {
     super();
@@ -29,8 +29,8 @@ export class EnemiesLayer extends Layer {
   public draw() {
     if (!this.visibility || !this.screen) return this;
 
-    let hVal = this.hSpeed * this.level / 1000 * this.deltaTime;
-    let vVal = this.vSpeed * this.level / 1000 * this.deltaTime;
+    const hVal = this.hSpeed * this.level / 1000 * this.deltaTime;
+    const vVal = this.vSpeed * this.level / 1000 * this.deltaTime;
 
     if (this.x < 0) {
       this.moveDirection = 'right';
@@ -38,8 +38,7 @@ export class EnemiesLayer extends Layer {
       this.moveDirection = 'left';
     }
 
-    hVal = this.moveDirection === 'right' ? hVal : -hVal;
-    this.x += hVal;
+    this.x += this.moveDirection === 'right' ? hVal : -hVal;
     this.y += vVal;
 
     if (this.y + this.height >= this.screen.height - 120) {

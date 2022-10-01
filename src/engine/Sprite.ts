@@ -39,7 +39,7 @@ export class Sprite extends Drawable {
     if (id >= 0 && id < this.frames) {
       this.currentFrame = id;
     }
-  };
+  }
 
   next() {
     this.currentFrame = this.currentFrame + 1 < this.frames

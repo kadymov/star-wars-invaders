@@ -18,7 +18,7 @@ export class Movie extends Sprite{
     const img = this.images[this.currentFrame];
     this.step();
     this.context?.drawImage(img, (this.parent?.x ?? 0) + this.x, (this.parent?.y ?? 0) + this.y);
-  };
+  }
 
   step() {
     if (!this.isPlay) return;
@@ -38,7 +38,7 @@ export class Movie extends Sprite{
     if (f > this.frame) this.next();
 
     this.frame = f;
-  };
+  }
 
   stop(): void {
     this.isPlay = false;
