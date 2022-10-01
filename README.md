@@ -2,11 +2,6 @@ Star Wars Invaders
 ==================
 
 Simple game
-  
-Liks
-----
-
-Developer website - www.kadymov.pw/
 
 License
 -------
