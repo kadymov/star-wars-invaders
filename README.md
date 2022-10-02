@@ -3,6 +3,10 @@ Star Wars Invaders
 
 Simple game engine
 
+[DEMO](https://htmlpreview.github.io/?https://github.com/kadymov/star-wars-invaders/blob/master/dist/index.htm)
+
+![Game - Star Wars Invaders](https://raw.githubusercontent.com/kadymov/star-wars-invaders/master/resources/scr.jpg)
+
 ![Game Engine UML](https://raw.githubusercontent.com/kadymov/star-wars-invaders/master/resources/uml.png)
 
 License
