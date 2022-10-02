@@ -1,7 +1,9 @@
 Star Wars Invaders
 ==================
 
-Simple game
+Simple game engine
+
+![Game Engine UML](https://raw.githubusercontent.com/kadymov/star-wars-invaders/master/resources/uml.png)
 
 License
 -------
