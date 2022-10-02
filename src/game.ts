@@ -47,7 +47,7 @@ function init(images: ImgResOutput) {
   const backgroundLayer = new Layer();
   const enemiesLayer = new EnemiesLayer(images.enemy, onEvent);
   const rocketsLayer = new RocketsLayer(images.rocket,
-     20, enemiesLayer, player, onEvent );
+     20, enemiesLayer, player, onEvent);
   const uiLayer = new Layer();
 
   let numberOfLives = 3;
@@ -76,16 +76,16 @@ function init(images: ImgResOutput) {
 
   let fire = false;
   document.addEventListener('keydown', function (e) {
-    if (e.keyCode === 37) player.accelerationLeft = 50;
-    if (e.keyCode === 39) player.accelerationRight = 50;
-    if (e.keyCode === 32) {
+    if (e.code === 'ArrowLeft') player.accelerationLeft = 50;
+    if (e.code === 'ArrowRight') player.accelerationRight = 50;
+    if (e.code === 'Space') {
       fire = true;
     }
   });
   document.addEventListener('keyup', function (e) {
-    if (e.keyCode === 37) player.accelerationLeft = 0;
-    if (e.keyCode === 39) player.accelerationRight = 0;
-    if (e.keyCode === 32) {
+    if (e.code === 'ArrowLeft') player.accelerationLeft = 0;
+    if (e.code === 'ArrowRight') player.accelerationRight = 0;
+    if (e.code === 'Space') {
       fire = false;
     }
   });
