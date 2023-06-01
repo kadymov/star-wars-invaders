@@ -12,7 +12,7 @@ export class RocketsLayer extends Layer {
   private readonly eventsCallback: (e: { event: string }) => void;
 
   constructor(
-    rocketSprite: HTMLImageElement[],
+    rocketSprite: ImageBitmap[],
     bufferSize: number,
     enemiesLayer: EnemiesLayer,
     player: Player,
@@ -28,7 +28,7 @@ export class RocketsLayer extends Layer {
     this.init(rocketSprite, bufferSize);
   }
 
-  private init(rocketSprite: HTMLImageElement[], bufferSize: number) {
+  private init(rocketSprite: ImageBitmap[], bufferSize: number) {
     const buff = this.rocketsBuffer;
 
     for (let i = 0; i < bufferSize; i++) {

@@ -3,19 +3,19 @@ export interface ImgResDeclaration {
 }
 
 export interface ImgResOutput {
-  [objName: string]: HTMLImageElement[]
+  [objName: string]: ImageBitmap[]
 }
 
-const loadImage = (url: string): Promise<HTMLImageElement> => {
+const loadImage = (url: string): Promise<ImageBitmap> => {
   return new Promise((resolve, reject) => {
     const img = new Image();
-    img.onload = () => resolve(img);
+    img.onload = () => resolve(createImageBitmap(img));
     img.onerror = (e) => reject(e);
     img.src = url;
   });
 }
 
-const loadImagesArray = (urls: string[]): Promise<HTMLImageElement[]> => {
+const loadImagesArray = (urls: string[]): Promise<ImageBitmap[]> => {
   return Promise.all(urls.map(loadImage))
 }
 

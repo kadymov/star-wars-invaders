@@ -6,7 +6,7 @@ export class Player extends Movie{
   public accelerationRight = 0;
 
   constructor(
-    images: HTMLImageElement[],
+    images: ImageBitmap[],
     private maxSpeed = 20,
     private minX = -100,
     private maxX = 1024 + 100

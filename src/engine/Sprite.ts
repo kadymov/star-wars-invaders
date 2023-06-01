@@ -1,10 +1,10 @@
 import {Drawable} from './Drawable';
 
 export class Sprite extends Drawable {
-  protected images: HTMLImageElement[] = [];
+  protected images: ImageBitmap[] = [];
   protected currentFrame = 0;
 
-  constructor(images: HTMLImageElement[]) {
+  constructor(images: ImageBitmap[]) {
     super();
     this.images = images;
   }
@@ -12,7 +12,11 @@ export class Sprite extends Drawable {
   draw(): void {
     if (!this.visibility) return;
     const img = this.images[this.currentFrame];
-    this.context?.drawImage(img, (this.parent?.x ?? 0) + this.x, (this.parent?.y ?? 0) + this.y);
+    this.context?.drawImage(
+        img,
+        (this.parent?.x ?? 0) + this.x,
+        (this.parent?.y ?? 0) + this.y
+    );
   }
 
   get frames() {
@@ -31,7 +35,7 @@ export class Sprite extends Drawable {
     return img.height;
   }
 
-  addImage(image: HTMLImageElement) {
+  addImage(image: ImageBitmap) {
     this.images.push(image);
   }
 

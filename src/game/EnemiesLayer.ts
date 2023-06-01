@@ -8,13 +8,13 @@ export class EnemiesLayer extends Layer {
   private vSpeed = 15;
   private readonly eventsCallback: (e: { event: string }) => void;
 
-  constructor(enemySprite: HTMLImageElement[], cb: EnemiesLayer['eventsCallback']) {
+  constructor(enemySprite: ImageBitmap[], cb: EnemiesLayer['eventsCallback']) {
     super();
     this.eventsCallback = cb;
     this.init(enemySprite);
   }
 
-  private init(enemySprite: HTMLImageElement[]) {
+  private init(enemySprite: ImageBitmap[]) {
     const H_SPACE = 40;
     const V_SPACE = 40;
 

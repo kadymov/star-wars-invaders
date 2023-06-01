@@ -7,7 +7,7 @@ export class Movie extends Sprite{
   private isPlay = false;
   private once = false;
 
-  constructor(images: HTMLImageElement[], duration = 100, once = false) {
+  constructor(images: ImageBitmap[], duration = 100, once = false) {
     super(images);
     this.duration = duration;
     this.once = once;

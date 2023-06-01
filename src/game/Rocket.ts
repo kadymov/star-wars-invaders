@@ -6,7 +6,7 @@ export class Rocket extends Sprite {
   private launched = false;
   private readonly onDestroy: () => void;
 
-  constructor(images: HTMLImageElement[], speedX: number, speedY: number, onDestroy: Rocket['onDestroy']) {
+  constructor(images: ImageBitmap[], speedX: number, speedY: number, onDestroy: Rocket['onDestroy']) {
     super(images);
 
     this.speedX = speedX;
