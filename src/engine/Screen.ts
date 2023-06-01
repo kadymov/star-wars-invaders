@@ -8,6 +8,7 @@ export class Screen extends Layer {
   private lastFpcUpd: number;
   private fpc = 0;
   private readonly ctx: CanvasRenderingContext2D | null;
+  private isRunningState: boolean = false;
 
   constructor(width: number, height: number, showFPC = false) {
     super();
@@ -21,9 +22,11 @@ export class Screen extends Layer {
     this.showFPC = showFPC;
     this.lastDraw = new Date().getTime();
     this.lastFpcUpd = new Date().getTime();
+
+    this.isRunning = true;
   }
 
-  appendTo(container: HTMLElement) {
+  public appendTo(container: HTMLElement) {
     container.appendChild(this.canvas);
     return this;
   }
@@ -40,6 +43,20 @@ export class Screen extends Layer {
     }
 
     this.lastDraw = new Date().getTime();
+  }
+
+  protected step() {};
+
+  get isRunning() {
+    return this.isRunningState;
+  }
+
+  set isRunning(value: boolean) {
+    if (!this.isRunningState && value) {
+      this.render();
+    }
+
+    this.isRunningState = value;
   }
 
   get deltaTime(): number {
@@ -79,5 +96,14 @@ export class Screen extends Layer {
 
   get height(): number {
     return this.canvas.height;
+  }
+
+
+  private render() {
+    if (this.isRunningState) {
+      this.step();
+      this.draw();
+    }
+    requestAnimationFrame(this.render.bind(this));
   }
 }
