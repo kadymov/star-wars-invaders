@@ -7,7 +7,13 @@
     "outDir": "./dist/",
     "sourceMap": true,
     "target": "ES5",
-    "strict": true
+    "strict": true,
+    "lib": [
+      "dom",
+      "es5",
+      "scripthost",
+      "es2015.promise"
+    ]
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules"]
